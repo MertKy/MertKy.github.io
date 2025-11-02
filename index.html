@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elif Koç - Portfolyo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font Ailesi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Inter font ailesini varsayılan olarak ayarla */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* gray-50 */
+            color: #1f2937; /* gray-800 */
+        }
+        
+        /* Kaydırıcı sürüklenirken seçimi engelle */
+        .slider-track.dragging {
+            user-select: none;
+            cursor: grabbing;
+        }
+        .slider-track {
+            cursor: grab;
+        }
+        .slide-image {
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Ana Konteyner -->
+    <div class="flex flex-col md:flex-row min-h-screen">
+
+        <!-- === YAN MENÜ (SIDEBAR) === -->
+        <aside class="w-full md:w-72 bg-white p-8 md:sticky md:top-0 md:h-screen flex-shrink-0 border-b md:border-b-0 md:border-r border-gray-200">
+            <div class="flex flex-col items-center text-center">
+                <!-- Profil Resmi -->
+                <img 
+                    src="https://placehold.co/128x128/10B981/F9FAFB?text=EK" 
+                    alt="Elif Koç Profil Resmi"
+                    class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-gray-100"
+                    onerror="this.src='https://placehold.co/128x128/10B981/F9FAFB?text=EK'"
+                >
+                
+                <h1 class="text-3xl font-bold text-gray-900 mt-5">Elif Koç</h1>
+                <!-- Renk Paletindeki Mavi Kullanımı -->
+                <p class="text-lg text-blue-600 font-medium mt-1">Geomatik Mühendisliği Öğrencisi</p>
+
+                <!-- Navigasyon -->
+                <nav class="mt-10 w-full">
+                    <ul class="space-y-3">
+                        <li><a href="#hakkimda" class="block py-3 px-4 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-blue-600 transition duration-300 font-medium">Hakkımda</a></li>
+                        <li><a href="#yetenekler" class="block py-3 px-4 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-blue-600 transition duration-300 font-medium">Yetenekler</a></li>
+                        <li><a href="#deneyim" class="block py-3 px-4 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-blue-600 transition duration-300 font-medium">Deneyim</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Sosyal Medya Linkleri -->
+                <div class="mt-12 flex justify-center space-x-5">
+                    <a href="https://www.linkedin.com/in/elif-koç-29284b31a/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-600 transition duration-300" title="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                    </a>
+                    <a href="mailto:kelif.3503@gmail.com" class="text-gray-400 hover:text-green-600 transition duration-300" title="E-posta">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- === ANA İÇERİK ALANI === -->
+        <main class="flex-1 md:overflow-y-auto md:h-screen p-6 md:p-12">
+            <div class="max-w-3xl mx-auto space-y-16">
+
+                <!-- HAKKIMDA BÖLÜMÜ -->
+                <section id="hakkimda" class="pt-10">
+                    <!-- Başlık (Yeşil alt çizgi) -->
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-6 pb-2 border-b-4 border-green-500 inline-block">Hakkımda</h2>
+                    <div class="space-y-5 text-gray-700 text-lg leading-relaxed">
+                        <p>Hacettepe Üniversitesi'nde 3. sınıf Geomatik Mühendisliği öğrencisiyim. Eğitimim süresince ve boş zamanlarımda, veri bilimi ve coğrafi veri analizi (Geospatial Analysis) alanlarına odaklanarak kendimi geliştiriyorum.</p>
+                        <p>Temel hedefim, lisans eğitimimi tamamladıktan sonra yeni teknolojik gelişmeler yaratabilen ve geleceğe katkı sağlayabilen bir uzman olmaktır.</p>
+                    </div>
+                </section>
+
+                <!-- YETENEKLER BÖLÜMÜ -->
+                <section id="yetenekler" class="pt-10">
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-8 pb-2 border-b-4 border-green-500 inline-block">Yetenekler</h2>
+                    
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Programlama ve Veri Bilimi</h3>
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <!-- Yeşil Renk Paleti -->
+                        <span class="bg-green-100 text-green-800 text-base font-medium px-5 py-2 rounded-full">Python</span>
+                        <span class="bg-green-100 text-green-800 text-base font-medium px-5 py-2 rounded-full">Pandas</span>
+                        <span class="bg-green-100 text-green-800 text-base font-medium px-5 py-2 rounded-full">NumPy</span>
+                        <span class="bg-green-100 text-green-800 text-base font-medium px-5 py-2 rounded-full">Matplotlib</span>
+                        <span class="bg-green-100 text-green-800 text-base font-medium px-5 py-2 rounded-full">Makine Öğrenmesi</span>
+                        <span class="bg-green-100 text-green-800 text-base font-medium px-5 py-2 rounded-full">Veri Okuryazarlığı</span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Coğrafi Bilgi Sistemleri (CBS)</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <!-- Mavi Renk Paleti -->
+                        <span class="bg-blue-100 text-blue-800 text-base font-medium px-5 py-2 rounded-full">QGIS</span>
+                        <span class="bg-blue-100 text-blue-800 text-base font-medium px-5 py-2 rounded-full">Netcad</span>
+                        <span class="bg-blue-100 text-blue-800 text-base font-medium px-5 py-2 rounded-full">Coğrafi Veri Analizi</span>
+                        <span class="bg-blue-100 text-blue-800 text-base font-medium px-5 py-2 rounded-full">Geocoding</span>
+                    </div>
+
+                    <div class="mt-10 pt-8 border-t border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Dil Becerileri</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                            <li><strong>Türkçe:</strong> Anadil</li>
+                            <li><strong>İngilizce:</strong> B2 Seviye</li>
+                            <li><strong>Japonca:</strong> A1 Seviye (Başlangıç)</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- DENEYİM BÖLÜMÜ (Yeni Galeri ile) -->
+                <section id="deneyim" class="pt-10 pb-20">
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-8 pb-2 border-b-4 border-green-500 inline-block">Deneyim ve Sertifikalar</h2>
+                    
+                    <!-- Staj Deneyimi -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Geomatik Mühendisi Stajyeri</h3>
+                        <p class="text-xl font-semibold text-blue-600">Çeşme Belediyesi - Yapı Kontrol Müdürlüğü</p>
+                        <p class="text-md text-gray-500 mb-6">Ağustos 2025 – Eylül 2025 (2 Ay)</p>
+                        
+                        <div class="space-y-4 text-gray-700 text-lg leading-relaxed mb-10">
+                            <p>Stajımı İzmir Çeşme Belediyesi Yapı Kontrol Müdürlüğü'nde tamamladım. Bu 2 aylık süre boyunca güncel teknolojik ekipman ve yazılımları kullanarak hem ofis içi hem de saha çalışmalarında aktif rol aldım.</p>
+                            <ul class="list-disc list-inside space-y-2 pl-2">
+                                <li><strong>Saha Çalışmaları:</strong> Stonex S850+ GNSS alıcısı ve Surpad4 uygulamasını kullanarak koordinat/kot verisi toplama, parsel aplikasyonu ve nokta alımı gibi görevleri yürüttüm.</li>
+                                <li><strong>Ofis Çalışmaları:</strong> Netcad programı ile yol ve parsel haritalandırma ve kırmızı kot hesaplamaları gibi işlemleri gerçekleştirdim.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- === Görsel Galeri (Carousel) === -->
+                    <div id="slider-container" class="relative w-full max-w-2xl mx-auto bg-gray-200 rounded-lg shadow-lg overflow-hidden">
+                        
+                        <!-- Slaytlar -->
+                        <div id="slider-track" class="flex transition-transform duration-300 ease-in-out">
+                            <!-- Slide 1 -->
+                            <div class="flex-shrink-0 w-full">
+                                <img src="https://placehold.co/800x500/10B981/FFFFFF?text=Staj+Görseli+1" alt="Görsel 1" class="w-full h-64 md:h-96 object-cover slide-image" onerror="this.src='https://placehold.co/800x500/10B981/FFFFFF?text=Staj+Görseli+1'">
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="flex-shrink-0 w-full">
+                                <img src="https://placehold.co/800x500/3B82F6/FFFFFF?text=Staj+Görseli+2" alt="Görsel 2" class="w-full h-64 md:h-96 object-cover slide-image" onerror="this.src='https://placehold.co/800x500/3B82F6/FFFFFF?text=Staj+Görseli+2'">
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="flex-shrink-0 w-full">
+                                <img src="https://placehold.co/800x500/059669/FFFFFF?text=Staj+Görseli+3" alt="Görsel 3" class="w-full h-64 md:h-96 object-cover slide-image" onerror="this.src='https://placehold.co/800x500/059669/FFFFFF?text=Staj+Görseli+3'">
+                            </div>
+                        </div>
+
+                        <!-- Galeri Kontrol Butonları -->
+                        <button id="prev-slide" class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button id="next-slide" class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+
+                    </div>
+                    <!-- === Galeri Bitişi === -->
+                    
+                    <!-- Seminerler ve Sertifikalar -->
+                    <div class="mt-16 pt-10 border-t border-gray-200">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Seminerler, Sertifikalar ve İlgi Alanları</h3>
+                        <ul class="list-disc list-inside space-y-4 text-gray-700 text-lg">
+                            <li>Otokar All Things Future Etkinliği Katılım Sertifikası</li>
+                            <li>
+                                Turkcell Geleceği Yazanlar Eğitimleri:
+                                <ul class="list-none list-inside ml-6 mt-2 space-y-1 text-base text-gray-600">
+                                    <li>- Veri Bilimi ve Yapay Zekaya Giriş 101</li>
+                                    <li>- Veri Okuryazarlığı 101</li>
+                                    <li>- Python Programlama (101, 201, 301, 401)</li>
+                                    <li>- Makine Öğrenmesi 101</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>İlgi Alanı:</strong> Masa Tenisi (2016 yılından beri, lise düzeyinde okul müsabakalarına katıldım.)
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+
+                <!-- FOOTER -->
+                <footer class="text-center py-10 border-t border-gray-200">
+                    <p class="text-gray-500">
+                        &copy; <span id="currentYear"></span> Elif Koç.
+                    </p>
+                </footer>
+            </div>
+        </main>
+
+    </div>
+
+    <script>
+        // Yılı otomatik olarak ayarla
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // === GALERİ (CAROUSEL) İŞLEVSELLİĞİ ===
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliderContainer = document.getElementById('slider-container');
+            if (!sliderContainer) return; // Galeri yoksa devam etme
+
+            const sliderTrack = document.getElementById('slider-track');
+            const prevButton = document.getElementById('prev-slide');
+            const nextButton = document.getElementById('next-slide');
+            const slides = Array.from(sliderTrack.children);
+            
+            if (slides.length === 0) return; // Slayt yoksa devam etme
+
+            let currentIndex = 0;
+            let isDragging = false;
+            let startPos = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+            let animationID = 0;
+            let slideWidth = slides[0].getBoundingClientRect().width;
+
+            // Pencere yeniden boyutlandığında slideWidth'i güncelle
+            function updateSlideWidth() {
+                slideWidth = slides[0].getBoundingClientRect().width;
+                updateSliderPosition(false); // Animasyonsuz güncelle
+            }
+
+            window.addEventListener('resize', updateSlideWidth);
+
+            // Slayt pozisyonunu ve buton görünürlüğünü güncelleyen fonksiyon
+            function updateSliderPosition(animate = true) {
+                if (animate) {
+                    sliderTrack.style.transition = 'transform 0.3s ease-in-out';
+                } else {
+                    sliderTrack.style.transition = 'none';
+                }
+                
+                // Kaydırma işlemi
+                sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Butonları etkinleştir/devre dışı bırak
+                prevButton.disabled = currentIndex === 0;
+                nextButton.disabled = currentIndex === slides.length - 1;
+                
+                // Buton opaklığı
+                prevButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                prevButton.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
+                nextButton.style.opacity = currentIndex === slides.length - 1 ? '0.5' : '1';
+                nextButton.style.cursor = currentIndex === slides.length - 1 ? 'not-allowed' : 'pointer';
+            }
+
+            // Sonraki Slayt
+            nextButton.addEventListener('click', () => {
+                if (currentIndex < slides.length - 1) {
+                    currentIndex++;
+                    updateSliderPosition();
+                }
+            });
+
+            // Önceki Slayt
+            prevButton.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSliderPosition();
+                }
+            });
+
+            // Sürükleme (Drag) İşlevselliği
+            sliderTrack.addEventListener('mousedown', startDrag);
+            sliderTrack.addEventListener('touchstart', startDrag, { passive: true });
+
+            sliderTrack.addEventListener('mouseup', endDrag);
+            sliderTrack.addEventListener('touchend', endDrag);
+
+            sliderTrack.addEventListener('mousemove', drag);
+            sliderTrack.addEventListener('touchmove', drag, { passive: true }); 
+            
+            sliderTrack.addEventListener('mouseleave', endDrag); // Fare konteynerdan çıkarsa
+
+            function startDrag(e) {
+                // Sadece sol tıkla sürüklemeyi başlat
+                if (e.type === 'mousedown' && e.which !== 1) return;
+
+                isDragging = true;
+                startPos = getPositionX(e);
+                
+                // Geçiş animasyonunu sürüklerken kaldır
+                sliderTrack.style.transition = 'none';
+                sliderTrack.classList.add('dragging');
+
+                // Kaydırma başlangıcındaki translate değerini al
+                const transformMatrix = window.getComputedStyle(sliderTrack).getPropertyValue('transform');
+                if (transformMatrix !== 'none') {
+                    currentTranslate = parseFloat(transformMatrix.split(',')[4]);
+                } else {
+                    currentTranslate = 0;
+                }
+                prevTranslate = currentTranslate;
+            }
+
+            function drag(e) {
+                if (!isDragging) return;
+
+                const currentPosition = getPositionX(e);
+                const diff = currentPosition - startPos;
+                
+                // Sürükleme miktarını uygula
+                currentTranslate = prevTranslate + diff;
+                sliderTrack.style.transform = `translateX(${currentTranslate}px)`;
+            }
+
+            function endDrag(e) {
+                if (!isDragging) return;
+                
+                isDragging = false;
+                const endPos = getPositionX(e);
+                const diff = endPos - startPos;
+
+                // Geçiş animasyonunu geri ekle
+                sliderTrack.style.transition = 'transform 0.3s ease-in-out';
+                sliderTrack.classList.remove('dragging');
+
+                // Kaydırma eşiği (threshold)
+                const threshold = slideWidth / 5; // Slayt genişliğinin %20'si
+
+                if (diff < -threshold && currentIndex < slides.length - 1) {
+                    // Sola kaydırma (Next)
+                    currentIndex++;
+                } else if (diff > threshold && currentIndex > 0) {
+                    // Sağa kaydırma (Prev)
+                    currentIndex--;
+                }
+                
+                // Eşiği geçmese bile mevcut pozisyona geri dön
+                updateSliderPosition();
+            }
+
+            function getPositionX(e) {
+                return e.type.includes('touch') ? e.touches[0].clientX : e.pageX;
+            }
+            
+            // Başlangıç pozisyonunu ayarla
+            updateSliderPosition(false); // Sayfa yüklendiğinde animasyonsuz ayarla
+        });
+    </script>
+
+</body>
+</html>
+
